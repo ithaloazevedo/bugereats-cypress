@@ -10,5 +10,12 @@ describe('Cadastro', () => {
         //Verificar se fomos redirecionados para o formulário de cadastro
         cy.get('#page-deliver form h1').should('have.text', 'Cadastre-se para fazer entregas')
 
+        //Populando dados para testes
+        var entregador = {
+            nome: 'Fulano de Tal',
+            cpf: '12345678910',
+            email: 'fulano@hotmail.com',
+            whatsapp: '62981828384'
+        }
     })
 });
