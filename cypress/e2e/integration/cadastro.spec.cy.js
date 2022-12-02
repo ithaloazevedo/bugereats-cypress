@@ -23,7 +23,9 @@ describe('Cadastro', () => {
                 complemento: 'Q27 L16 Casa 3',
                 bairro: 'Setor Cristina II',
                 cidade: 'Trindade/GO',
-            }
+            },
+            metodo_entrega: 'Bicicleta'
+
         }
 
         //Preenchendo formulário
@@ -38,6 +40,10 @@ describe('Cadastro', () => {
         cy.get('input[name = "address-number"]').type(entregador.endereco.numero)
         cy.get('input[name = "address-details"]').type(entregador.endereco.complemento)
 
+        cy.get('input[name="address"]').should('have.value', entregador.endereco.rua)
+        cy.get('input[name="district"]').should('have.value', entregador.endereco.bairro)
+        cy.get('input[name="city-uf"]').should('have.value', entregador.endereco.cidade)
 
+        cy.contains('.delivery-method li', entregador.metodo_entrega).click()
     })
 });
