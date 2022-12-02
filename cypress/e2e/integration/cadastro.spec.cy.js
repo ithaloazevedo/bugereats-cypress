@@ -24,8 +24,8 @@ describe('Cadastro', () => {
                 bairro: 'Setor Cristina II',
                 cidade: 'Trindade/GO',
             },
-            metodo_entrega: 'Bicicleta'
-
+            metodo_entrega: 'Bicicleta',
+            cnh: 'cng-digital.png'
         }
 
         //Preenchendo formulário
@@ -47,7 +47,6 @@ describe('Cadastro', () => {
         //Identificando elemento que 'delivery-method li' que contém o contéudo 
         //de entregador.metodo_entrega (bicicleta) 
         cy.contains('.delivery-method li', entregador.metodo_entrega).click()
-        cy.get()
 
         //Seletores CSS
         //[attribute="value"] -> busca o atributo que contém exatamente o valor
@@ -55,6 +54,8 @@ describe('Cadastro', () => {
         //[attribute$="value"] -> busca o atributo que termina com o valor
         //[attribute*="value"] -> busca o atributo que contenha a substring do valor  (ex:test, unity test, tests, testing)
         //[attribute~="value"] -> busca o atributo que contenha a string do valor (ex: test, unity test)
-        //
+
+        //Realizando upload da CNH
+        cy.get('input[accept^="image"]').attachFile(entregador.cnh)
     })
 });
