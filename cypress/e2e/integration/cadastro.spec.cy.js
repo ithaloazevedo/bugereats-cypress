@@ -25,7 +25,7 @@ describe('Cadastro', () => {
                 cidade: 'Trindade/GO',
             },
             metodo_entrega: 'Bicicleta',
-            cnh: 'cng-digital.png'
+            cnh: 'cnh-digital.png'
         }
 
         //Preenchendo formulário
