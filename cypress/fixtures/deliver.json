@@ -12,10 +12,10 @@
             "district": "Itaim Bibi",
             "city_state": "São Paulo/SP"
         },
-        "delivery_method": "Bicicleta",
+        "delivery_method": "Bike Elétrica",
         "cnh": "cnh-digital.png"
     },
-    "cpf_invalido": {
+    "invalidCpf": {
         "name": "Fulano de Tal",
         "cpf": "x00000141AA",
         "email": "fulano@hotmail.com",
@@ -28,7 +28,23 @@
             "district": "Setor Cristina II",
             "city_state": "Trindade/GO"
         },
-        "delivery_method": "Bicicleta",
+        "delivery_method": "Van/Carro",
+        "cnh": "cnh-digital.png"
+    },
+        "invalidEmail": {
+        "name": "Fulano de Tal",
+        "cpf": "00000014141",
+        "email": "fulano@",
+        "whatsapp": "62981828384",
+        "address": {
+            "postalcode": "75389121",
+            "street": "Rua Mário de Melo",
+            "number": "0",
+            "details": "Q27 L16 Casa 3",
+            "district": "Setor Cristina II",
+            "city_state": "Trindade/GO"
+        },
+        "delivery_method": "Moto",
         "cnh": "cnh-digital.png"
     }
 }
