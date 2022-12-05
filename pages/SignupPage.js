@@ -6,7 +6,7 @@ class SignupPage {
         //Setar resolução
         cy.viewport(1440, 900)
         //Redirecionar navegador para a url
-        cy.visit('https://buger-eats.vercel.app')
+        cy.visit('https://buger-eats-qa.vercel.app')
 
         //Clicar no botão "Cadastre-se para fazer entregas"
         cy.get('a[href="/deliver"]').click()
@@ -17,7 +17,7 @@ class SignupPage {
     preencherForm(entregador) {
 
         //Preenchendo formulário
-        cy.get('input[name="name"]').type(entregador.name)
+        cy.get('input[name="fullName"]').type(entregador.name)
         cy.get('input[name="cpf"]').type(entregador.cpf)
         cy.get('input[name="email"]').type(entregador.email)
         cy.get('input[name="whatsapp"]').type(entregador.whatsapp)
