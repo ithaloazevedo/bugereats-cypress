@@ -17,24 +17,24 @@ class SignupPage {
     preencherForm(entregador) {
 
         //Preenchendo formulário
-        cy.get('input[name="name"]').type(entregador.nome)
+        cy.get('input[name="name"]').type(entregador.name)
         cy.get('input[name="cpf"]').type(entregador.cpf)
         cy.get('input[name="email"]').type(entregador.email)
-        cy.get('input[name="whatsapp"]').type(entregador.telefone)
+        cy.get('input[name="whatsapp"]').type(entregador.whatsapp)
 
-        cy.get('input[name="postalcode"]').type(entregador.endereco.cep)
+        cy.get('input[name="postalcode"]').type(entregador.address.postalcode)
         cy.get('input[type="button"][value="Buscar CEP"]').click()
 
-        cy.get('input[name = "address-number"]').type(entregador.endereco.numero)
-        cy.get('input[name = "address-details"]').type(entregador.endereco.complemento)
+        cy.get('input[name = "address-number"]').type(entregador.address.number)
+        cy.get('input[name = "address-details"]').type(entregador.address.details)
 
-        cy.get('input[name="address"]').should('have.value', entregador.endereco.rua)
-        cy.get('input[name="district"]').should('have.value', entregador.endereco.bairro)
-        cy.get('input[name="city-uf"]').should('have.value', entregador.endereco.cidade)
+        cy.get('input[name="address"]').should('have.value', entregador.address.street)
+        cy.get('input[name="district"]').should('have.value', entregador.address.district)
+        cy.get('input[name="city-uf"]').should('have.value', entregador.address.city_state)
 
         //Identificando elemento que 'delivery-method li' que contém o contéudo 
         //de entregador.metodo_entrega (bicicleta) 
-        cy.contains('.delivery-method li', entregador.metodo_entrega).click()
+        cy.contains('.delivery-method li', entregador.delivery_method).click()
 
         //Seletores CSS
         //[attribute="value"] -> busca o atributo que contém exatamente o valor
