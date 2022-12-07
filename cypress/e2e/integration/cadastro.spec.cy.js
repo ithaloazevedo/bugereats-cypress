@@ -31,4 +31,18 @@ describe('Cadastro', () => {
         signup.submeterForm()
         signup.validarAlertaCPF('Oops! Email com formato inválido.')
     })
+
+    it('O usuário não preencheu os campos obrigatórios', function () {
+        signup.go()
+        signup.submeterForm()
+        signup.mensagemDeAlertaDeveSer('É necessário informar o nome')
+        signup.mensagemDeAlertaDeveSer('É necessário informar o email')
+        signup.mensagemDeAlertaDeveSer('É necessário informar o CPF')
+        signup.mensagemDeAlertaDeveSer('É necessário informar o CEP')
+        signup.mensagemDeAlertaDeveSer('É necessário informar o número do endereço')
+        signup.mensagemDeAlertaDeveSer('Selecione o método de entrega')
+        signup.mensagemDeAlertaDeveSer('Adicione uma foto da sua CNH')
+
+
+    })
 })

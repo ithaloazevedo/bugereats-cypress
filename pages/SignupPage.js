@@ -61,6 +61,11 @@ class SignupPage {
     validarAlertaCPF(expectedMesssage) {
         cy.get('span[class="alert-error"]').should('have.text', expectedMesssage)
     }
+
+    mensagemDeAlertaDeveSer(expectedMessage) {
+        //Valida se existe o elemento com a mensagem e se ele é visivel
+        cy.contains('.alert-error', expectedMessage).should('be.visible')
+    }
 }
 
 export default SignupPage;
